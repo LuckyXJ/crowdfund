@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import { abi } from "./abi";
 
-const contractAddress = "0x07A945f9E586bA293e692E2cE71A3967c70cb3C8"; // 合约地址
+const contractAddress = "0x62131cCCA16141604cBbb704f389592Fe54ff859"; // 合约地址
 
 const sepoliaTest =
   "https://sepolia.infura.io/v3/9e6d42be6ef4415a81df98ee13b20b0f";
