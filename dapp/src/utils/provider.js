@@ -12,9 +12,7 @@ export const getContract = (provider) => {
   if (!provider) {
     return new ethers.Contract(contractAddress, abi, rpcProvider); //只读合约
   } else {
-    const key =
-      "c11ce0b7969f358c5f28bb937766de4f4434a9333b0b97db5a9e1d39afb98b5a";
-    const wallet = new ethers.Wallet(key, provider);
-    return new ethers.Contract(contractAddress, abi, wallet); // 读写合约
+    const signer = provider.getSigner();
+    return new ethers.Contract(contractAddress, abi, signer); // 读写合约
   }
 };

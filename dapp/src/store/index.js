@@ -29,7 +29,10 @@ export default new Vuex.Store({
         web3Provider = window.ethereum;
         try {
           // 请求用户授权
-          const results = await web3Provider.enable();
+          // const results = await web3Provider.enable();
+          const results = await window.ethereum.request({
+            method: "eth_requestAccounts",
+          });
           if (!results.length) return;
           const provider = new ethers.providers.Web3Provider(web3Provider);
           const network = await provider.getNetwork();

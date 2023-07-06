@@ -175,7 +175,6 @@ export default {
   methods: {
     handleTab(tab) {
       this.activeTab = tab.index;
-      console.log(tab, "lllllll");
     },
     formatAmount(num) {
       return ethers.utils.formatEther(num);
@@ -189,7 +188,6 @@ export default {
       const contract = getContract();
       const length = await contract.projectLength();
       let arr = [];
-      console.log(contract, "heyue");
       for (let i = 0; i < length; i++) {
         arr.unshift(contract.projects(i));
       }
@@ -197,6 +195,7 @@ export default {
       this.depositList = depositList.map((item) => {
         return { ...item, inputAmount: "" };
       });
+      console.log(this.depositList, "project");
     },
 
     async closeProject(index) {
@@ -227,7 +226,10 @@ export default {
       const myContract = getContract(this.ethereumProvider);
       const amount = parseAmount(item.inputAmount);
       try {
-        const tx = await myContract.contribution(index, { value: amount });
+        const tx = await myContract.contribution(index, {
+          value: amount,
+        });
+        console.log(tx, "txtxtxtxt");
         this.$notify({
           title: "捐款中，请稍后...",
           type: "success",
