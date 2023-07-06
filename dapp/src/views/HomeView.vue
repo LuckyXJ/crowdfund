@@ -70,12 +70,12 @@
                 >
                 <div class="input-box mr10">
                   <el-input v-model="item.inputAmount" class="mr10"></el-input>
-                  <el-button
+                  <!-- <el-button
                     class="pbtn pbtnmax"
                     type="primary"
                     @click="handlerMax(item, index)"
                     >MAX</el-button
-                  >
+                  > -->
                 </div>
                 <el-button
                   class="pbtn mr10"
